@@ -1,0 +1,8 @@
+Иванов Иван Иванович # ivanov@mail.ru
+Петров Петр Петрович # petr.petrov@gmail.com
+Сидорова Анна Сергеевна # anna.sidorova@yandex.ru
+Федоров Федор Федорович # f.fedorov@outlook.com
+Кузнецова Елена Викторовна # elena.kuz@mail.ru
+Николаев Николай Николаевич # nick.n@mail.ru
+Тестовая строка без почты
+Попов Алексей Андреевич # popov.alex@rambler.ru

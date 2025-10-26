@@ -102,6 +102,9 @@ namespace ConsoleApp4.Bank
             
         }
 
+        /// <summary>
+        /// Метод для вывода информации о номере счета, балансе и типе счета
+        /// </summary>
         public void PrintInfo()
         {
             Console.WriteLine($"Номер счета: {_accountNumber}\nБаланс: {_balance}\nТип счета: {_typeOfBankAccount}");

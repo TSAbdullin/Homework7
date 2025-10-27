@@ -1,5 +1,6 @@
 ﻿using ConsoleApp4.Bank;
 using ConsoleApp4.Bank.Enums;
+using Homework7.Song;
 using System.Text;
 
 // хочу красиво внедрить LINQ запрос в какое-нибудь из заданий :З
@@ -43,7 +44,7 @@ class StartProgram
         Console.ResetColor();
 
         Console.Write("Введите имя файла: ");
-        string nameOfFile = Console.ReadLine();
+        var nameOfFile = Console.ReadLine();
 
         if (nameOfFile is null)
         {
@@ -71,9 +72,9 @@ class StartProgram
         Console.ResetColor();
 
         int number = 17;
-        DateTime date = DateTime.Now;
-        char letter = 'f';
-        object obj = new object();
+        var date = DateTime.Now;
+        var letter = 'f';
+        var obj = new object();
 
         // Проверяем каждый
         Console.WriteLine(IsFormattable(number));
@@ -81,9 +82,6 @@ class StartProgram
         Console.WriteLine(IsFormattable(letter));
         Console.WriteLine(IsFormattable(obj));
         //////////////////////////////
-
-
-
 
         //////////////////////////////
         Console.BackgroundColor = ConsoleColor.Blue;
@@ -99,7 +97,7 @@ class StartProgram
                      where text != String.Empty && text is not null
                      select text;
 
-        string outputPATH = "../../../Files/OutputEmail.txt";
+        var outputPATH = "../../../Files/OutputEmail.txt";
         File.WriteAllLines(outputPATH, emails);
 
         Console.ForegroundColor = ConsoleColor.Green;
@@ -107,6 +105,30 @@ class StartProgram
         Console.ResetColor();
         //////////////////////////////
 
+        //////////////////////////////
+        Console.BackgroundColor = ConsoleColor.Blue;
+        Console.WriteLine("Домашнее задание 8.2 Список песен. В методе Main создать список из четырех песен. " +
+            "В\r\nцикле вывести информацию о каждой песне. Сравнить между собой первую и вторую\r\nпесню в списке. " +
+            "Песня представляет собой класс с методами для заполнения каждого из\r\nполей, методом вывода данных о песне на печать, " +
+            "методом, который сравнивает между\r\nсобой два объекта:\n");
+        Console.ResetColor();
+
+        var song1 = new Song("Firework", "Katy Perry");
+        var song2 = new Song("Февраль", "Баста", song1);
+        var song3 = new Song("Enemy", "Imagine Dragons", song2);
+        var song4 = new Song("Firework", "Katy Perry", song3);
+
+        var currentSong = song4; // переменная, которая хранит текущую песню
+        
+        while (currentSong != null) // выводим все песни
+        {
+            currentSong.PrintInfo();
+            currentSong = currentSong.GetPrev(); // присваиваем текущей песне предыдущую песню
+        }
+
+        Console.WriteLine($"Сравниваем две разные песни song1 и song2 - {song1.Equals(song2)}");
+        Console.WriteLine($"Сравниваем две одинаковые песни song1 и song4 - {song1.Equals(song4)}");
+        //////////////////////////////
     }
 
     /// <summary>

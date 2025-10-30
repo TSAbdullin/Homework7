@@ -74,12 +74,14 @@ class StartProgram
         int number = 17;
         var date = DateTime.Now;
         var letter = 'f';
+        var texxt = "fwfawf";
         var obj = new object();
-
+     
         // Проверяем каждый
         Console.WriteLine(IsFormattable(number));
         Console.WriteLine(IsFormattable(date));
         Console.WriteLine(IsFormattable(letter));
+        Console.WriteLine(IsFormattable(texxt));
         Console.WriteLine(IsFormattable(obj));
         //////////////////////////////
 
